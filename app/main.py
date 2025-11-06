@@ -23,7 +23,7 @@ def brute_force_passwords() -> None:
     targets = set(PASSWORDS_TO_BRUTE_FORCE)
     found = {}
     for number in range(0, 100_000_000):
-        password = f"{number: 08d}"
+        password = f"{number:08d}"
         hash_value = sha256_hash_str(password)
         if hash_value in targets:
             found[hash_value] = password
